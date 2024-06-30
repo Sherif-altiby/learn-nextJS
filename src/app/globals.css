@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+
+    .container {
+        @apply px-4 mx-auto  w-full sm:w-[540px] md:w-[720px] lg:w-[960px] xl:w-[1140px] 2xl:w-[1320px] min-h-[100vh]
+    }
+
+    .clc-height{
+        min-height: calc(100vh - 100px);
+    }
+    
+}
+
+body{
+    overflow-x: hidden;
+}

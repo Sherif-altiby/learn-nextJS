@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
-
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
+ 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -13,16 +14,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-      <nav className="flex py-3 items-center justify-between bg-yellow-700 px-6" >
-           <Link href = "/"  className="cursor-pointer py-2 px-4 text-xl bg-slate-700 text-white rounded-lg"> Home </Link>
-           <Link href = "/posts"  className="cursor-pointer py-2 px-4 text-xl bg-slate-700 text-white rounded-lg"> Posts </Link>
-           <Link href = "/articles" className="cursor-pointer py-2 px-4 text-xl bg-slate-700 text-white rounded-lg" > Articles </Link>
-        </nav>
-       <div className="px-6" >
-        
-         {children}
-       </div>
+      <body className={`${inter.className} bg-bgColor text-white`}>
+         <div className="container flex flex-col justify-between" >
+             <Navbar />
+               {children}
+             <Footer />
+         </div> 
       </body>
     </html>
   );
