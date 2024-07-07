@@ -19,7 +19,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const session = true;
-  const isAdmin = true;
+  const isAdmin = false;
 
   const handleMenu = () => {
     setIsOpen(!isOpen);
@@ -81,7 +81,7 @@ const Navbar = () => {
             href={link.path}
             key={link.title}
             onClick={handleMenu}
-          >
+          >       
             {link.title}
           </Link>
         ))}
